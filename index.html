@@ -1,1 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu blog tech</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #d90d0d;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #1f3b5f;
+            color: rgb(255, 255, 255);
+            padding: 20px;
+            text-align: center;
+        }
+        .post {
+            background-color: white;
+            margin: 20px auto;
+            padding: 20px;
+            max-width: 600px;
+            border-radius: 8px;
+            box-shadow: 0 0 5px rgba(0,0,0,0.1);
+        }
+        .post h2 {
+            margin-top: 0;
+        }
+        .botoes {
+            margin-top: 10px;
+        }
+        .botoes button {
+            cursor: pointer;
+            margin-right: 10px;
+            padding: 5px 10px;
+        }
+        .contador {
+            margin-left: 5px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Meu blog tech</h1>
+        <p>Vou compartilhar conhecimentos sobre tecnologia e programação</p>
+    </header>
 
+    <div class="post">
+        <h2>Meu primeiro post</h2>
+        <p>Por: Michelen</p>
+        <p>Boas-vindas ao meu novo blog! Aqui vou compartilhar dicas de programação e curiosidades da área de tecnologia.</p>
+        <div class="botoes">
+            <button class="like">❤️ <span class="contador">0</span></button>
+            <button class="dislike">⚠️ <span class="contador">0</span></button>
+        </div>
+    </div>
+
+    <div class="post">
+        <h2>Meu segundo post</h2>
+        <p>Por: Michelen</p>
+        <p>Boas-vindas ao meu novo blog! Aqui vou compartilhar dicas de programação e curiosidades da área de tecnologia.</p>
+        <div class="botoes">
+            <button class="like">❤️ <span class="contador">0</span></button>
+            <button class="dislike">⚠️ <span class="contador">0</span></button>
+        </div>
+    </div>
+
+    <script>
+        const botoes = document.querySelectorAll("button");
+
+        botoes.forEach(function(botao) {
+            botao.addEventListener("click", function() {
+                console.log("fui clicado");
+                let contador = botao.querySelector("span");
+                contador.textContent = parseInt(contador.textContent) + 1;
+            });
+        });
+    </script>
+</body>
+</html>
